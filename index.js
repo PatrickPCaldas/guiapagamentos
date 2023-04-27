@@ -53,6 +53,6 @@ app.post("/not",(req,res)=>{
     res.send("OK")
 })
 
-app.listen(22,(req,res)=>{
+app.listen(3000,(req,res)=>{
     console.log("Servidor rodando")
 })
