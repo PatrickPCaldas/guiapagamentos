@@ -8,7 +8,7 @@ mercadoPago.configure({
 })
 
 app.get("/",(req,res)=>{
-    res.send("Ola Mundo")
+    res.send("Ola Marinosky")
 })
 
 //Pagamentos
@@ -39,12 +39,18 @@ app.get("/pagar", async (req,res)=>{
     try{
         var pagamento = await mercadoPago.preferences.create(dados)
         console.log(pagamento)
+        // Banco.salvarPagamento({id:id, email: emailPagador})
         return res.redirect(pagamento.body.init_point)
 
     }catch(err){
         return res.send(err.message)
     }
 
+})
+
+app.post("/not",(req,res)=>{
+    console.log(req.query)
+    res.send("OK")
 })
 
 app.listen(3000,(req,res)=>{
